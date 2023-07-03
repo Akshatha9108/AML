@@ -13,7 +13,7 @@ class WikipediaSpider(scrapy.Spider):
           images=response.css('img::attr(src)').getall()
           
            #Extract paragraphs
-          paragraphs=response.css('p::attr(src)').getall()
+          paragraphs=response.css('p::text').getall()
            
           #save images to a file
           with open('images.txt','w')as file:
